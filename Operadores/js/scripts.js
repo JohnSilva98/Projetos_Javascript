@@ -27,3 +27,8 @@ console.log("testando o \t espaçamento de tab")
 console.log("Meu" + "texto" + "combinado")
 //template string
 console.log(`a soma de 2 + 2 é: ${2 + 2}`)
+
+//boolean
+console.log(true)
+console.log(5 > 20)
+console.log(30 > 10)
