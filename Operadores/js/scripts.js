@@ -32,3 +32,11 @@ console.log(`a soma de 2 + 2 é: ${2 + 2}`)
 console.log(true)
 console.log(5 > 20)
 console.log(30 > 10)
+
+//comparações
+
+console.log(5 <= 5)
+console.log(5 < 5)
+console.log(10 == 10)
+console.log(10 < 9)
+console.log(10 != 9)
