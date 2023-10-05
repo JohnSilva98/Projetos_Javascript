@@ -18,3 +18,7 @@ console.log(typeof NaN)
 //string
 console.log('um texto')
 console.log('outro texto')
+
+//caracteres especiais
+console.log('testando a \n quebra de linha')
+console.log("testando o \t espaçamento de tab")
