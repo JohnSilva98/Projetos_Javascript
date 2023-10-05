@@ -16,9 +16,14 @@ console.log(12 * "asd")
 console.log(typeof NaN)
 
 //string
-console.log('um texto')
-console.log('outro texto')
+console.log("um texto")
+console.log("outro texto")
 
 //caracteres especiais
-console.log('testando a \n quebra de linha')
+console.log("testando a \n quebra de linha")
 console.log("testando o \t espaçamento de tab")
+
+//concatenação
+console.log("Meu" + "texto" + "combinado")
+//template string
+console.log(`a soma de 2 + 2 é: ${2 + 2}`)
