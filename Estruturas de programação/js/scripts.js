@@ -40,9 +40,28 @@ console.warn("warm da um aviso na console")
 
 //estruturas de controle
 
-const age = prompt("digite sua idade; ")
-if (age >= 18) {
-  console.log("Você tem 18 anos ou mais!")
-} else {
-  console.log("Você tem menos de 18 anos!")
+//const age = prompt("digite sua idade; ")
+//if (age >= 18) {
+//  console.log("Você tem 18 anos ou mais!")
+//} else {
+//console.log("Você tem menos de 18 anos!")
+//}
+
+//estrutura de repetição
+
+let p = 0
+while (p < 5) {
+  console.log(`Repetindo ${p}`)
+  p = p + 1
+}
+//do while
+let o = 10
+do {
+  console.log(`valor de o: ${o}`)
+  o--
+} while (o > 1)
+
+//for
+for (let t = 0; t < 10; t++) {
+  console.log("repetindo frase..")
 }
