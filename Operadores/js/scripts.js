@@ -40,3 +40,15 @@ console.log(5 < 5)
 console.log(10 == 10)
 console.log(10 < 9)
 console.log(10 != 9)
+
+// operadores lógicos
+
+//&& and
+// || or
+// ! not
+
+console.log(true && true)
+console.log(true && false)
+console.log(5 > 2 && 2 < 10)
+console.log(5 > 2 || 5 > 10)
+console.log(!5 > 2)
