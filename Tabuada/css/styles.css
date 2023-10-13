@@ -64,7 +64,7 @@ h2 {
   font-weight: bold;
 }
 
-#multiplication-operations {
+#multi-op {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,7 +76,7 @@ h2 {
   border-radius: 1rem;
 }
 
-#multiplication-operations .row {
+#multi-op .row {
   display: flex;
   justify-content: center;
   border: 1px solid #ccc;
@@ -85,10 +85,10 @@ h2 {
   width: 150px;
 }
 
-#multiplication-operations .row:last-child {
+#multi-op .row:last-child {
   border-bottom: 1px solid #ccc;
 }
 
-#multiplication-operations .result {
+#multi-op .result {
   margin-left: 0.4rem;
 }
