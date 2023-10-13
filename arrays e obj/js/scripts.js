@@ -51,5 +51,5 @@ class dog {
   }
 }
 
-const jeff = new dog("thor", "pisncher")
+const jeff = new dog("thor", "pinscher")
 console.log(jeff)
