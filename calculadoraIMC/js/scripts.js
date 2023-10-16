@@ -76,7 +76,6 @@ function validDigits(text) {
 //inicialização do projeto
 createTable(data)
 //eventos
-
 ;[heightInput, weightInput].forEach((el) => {
   el.addEventListener("input", (e) => {
     const updateValue = validDigits(e.target.value)
@@ -85,7 +84,31 @@ createTable(data)
   })
 })
 
+calcBtn.addEventListener("click", (e) => {
+  e.preventDefault()
 
+  const weight = +weightInput.value.replace(",", ".")
+  const height = +heightInput.value.replace(",", ".")
+
+  if (!weight || !height) return
+
+  const imc = calcIMC(weight, height)
+
+  let info
+  data.forEach((item) => {
+    if (imc >= item.min && imc <= item.max) {
+      info = item.info
+    }
+  })
+ 
+  if (!info) return
+})
+
+function calcIMC(weight, height) {
+  const imc = weight / (height * height).toFixed(1)
+
+  return imc
+}
 
 clearBtn.addEventListener("click", (e) => {
   e.preventDefault()
