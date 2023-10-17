@@ -15,7 +15,7 @@
     <title>Todo List</title>
   </head>
   <body>
-    <div id="todo-container">
+    <div class="todo-container">
       <header>
         <h1>Todo List</h1>
       </header>
@@ -32,9 +32,9 @@
           </button>
         </div>
       </form>
-      <form id="edit-form">
+      <form id="edit-form" class="hide">
+        <p>Edite sua tarefa:</p>
         <div class="form-control">
-          <p>Edite sua tarefa:</p>
           <input type="text" id="edit-input" />
           <button type="submit">
             <i class="fa-solid fa-check-double"></i>
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div id="todo-list">
-        <div class="todo">
+        <div class="todo done ">
           <h3>Estou fazendo alguma coisa..</h3>
           <button class="finish-todo">
             <i class="fa-solid fa-check"></i>
