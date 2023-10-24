@@ -40,8 +40,26 @@ function createNote(id, content, fixed) {
   textarea.value = content
   textarea.placeholder = "Adicione algum texto..."
   element.appendChild(textarea)
+  const pinIcon = document.createElement("i")
+  pinIcon.classList.add(...["bi", "bi-pin"])
+  element.appendChild(pinIcon)
 
+  if (fixed) {
+    element.classList.add("fixed")
+  }
+
+  // eventos do elemento
+  element.querySelector(".bi-pin").addEventListener("click", () => {
+    toggleFixNote(id)
+  })
   return element
+}
+
+function toggleFixNote(id) {
+  const notes = getNotes()
+  const targetNote = notes.filter((note) => note.id === id)[0]
+  targetNote.fixed = !targetNote.fixed
+  saveNotes(notes)
 }
 // local storage
 
