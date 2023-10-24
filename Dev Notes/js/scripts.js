@@ -4,11 +4,16 @@ const noteInput = document.querySelector("#note-content")
 const addNotebtn = document.querySelector(".add-note")
 // funções
 function showNotes() {
+  cleanNotes()
   getNotes().forEach((note) => {
     const noteElement = createNote(note.id, note.content, note.fixed)
 
     notesContainer.append(noteElement)
   })
+}
+
+function cleanNotes() {
+  notesContainer.replaceChildren([])
 }
 
 function addNote() {
@@ -60,6 +65,8 @@ function toggleFixNote(id) {
   const targetNote = notes.filter((note) => note.id === id)[0]
   targetNote.fixed = !targetNote.fixed
   saveNotes(notes)
+
+  showNotes()
 }
 // local storage
 
