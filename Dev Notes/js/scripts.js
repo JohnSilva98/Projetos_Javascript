@@ -2,9 +2,12 @@
 const notesContainer = document.querySelector("#notes-container")
 const noteInput = document.querySelector("#note-content")
 const addNotebtn = document.querySelector(".add-note")
+const searchInput = document.querySelector("#search-input")
+
 // funções
 function showNotes() {
   cleanNotes()
+
   getNotes().forEach((note) => {
     const noteElement = createNote(note.id, note.content, note.fixed)
 
@@ -61,10 +64,10 @@ function createNote(id, content, fixed) {
 
   // eventos do elemento
 
-element.querySelector("textarea").addEventListener("keyup", (e)=>{
-  const noteContent = e.target.value
-  updateNote(id, noteContent)
-})
+  element.querySelector("textarea").addEventListener("keyup", (e) => {
+    const noteContent = e.target.value
+    updateNote(id, noteContent)
+  })
 
   element.querySelector(".bi-pin").addEventListener("click", () => {
     toggleFixNote(id)
@@ -81,9 +84,9 @@ element.querySelector("textarea").addEventListener("keyup", (e)=>{
   return element
 }
 
-function updateNote(id, newContent){
+function updateNote(id, newContent) {
   const notes = getNotes()
-  const targetNote = notes.filter((note)=> note.id === id)[0]
+  const targetNote = notes.filter((note) => note.id === id)[0]
 
   targetNote.content = newContent
   saveNotes(notes)
@@ -119,6 +122,7 @@ function toggleFixNote(id) {
 
   showNotes()
 }
+
 // local storage
 
 function getNotes() {
@@ -130,9 +134,29 @@ function getNotes() {
 function saveNotes(notes) {
   localStorage.setItem("notes", JSON.stringify(notes))
 }
-// eventos
 
+function searchNotes(search) {
+  const searchResult = getNotes().filter((note) =>
+    note.content.includes(search)
+  )
+
+  if (search !== "") {
+    cleanNotes()
+    searchResult.forEach((note) => {
+      const noteElement = createNote(note.id, note.content)
+      notesContainer.appendChild(noteElement)
+    })
+    return
+  }
+}
+
+// eventos
 addNotebtn.addEventListener("click", () => addNote())
+searchInput.addEventListener("keyup", (e) => {
+  const search = e.target.value
+
+  searchNotes(search)
+})
 
 // start
 showNotes()
