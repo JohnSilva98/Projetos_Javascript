@@ -10,6 +10,10 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "files.autoSave": "afterDelay",
+  "editor.tokenColorCustomizations": {
+    "comments": "#11cb36",
+    "variables": "#2a96cc"
+  }, 
 
   // explorer
   "explorer.compactFolders": false,
